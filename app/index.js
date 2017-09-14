@@ -1,5 +1,11 @@
 var express = require('express')
 var path = require('path')
+var multer = require('multer')
+
+var storage = multer.memoryStorage()
+var upload = multer({
+  storage: storage
+})
 
 var app = express()
 var port = process.env.PORT || 9000
@@ -23,8 +29,13 @@ app.get('*', function (req, res) {
 })
 
 /* conversion post */
-app.post('/', (req, res) => {
-
+app.post('/', upload.single('file'), (req, res) => {
+  res.set('Content-Type', 'application/json')
+  res.send({
+    name: req.file.originalname,
+    type: req.file.mimetype,
+    size: req.file.size
+  })
 })
 
 /* start app */

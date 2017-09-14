@@ -8,7 +8,7 @@
     <title>file-metadata-microservice</title>
     <meta name="description" content="URL Shortner">
     <meta name="author" content="mubaidr@gmail.com">
-    <link rel="stylesheet" href="index.css">
+    <link href="index.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -23,18 +23,18 @@
       <p>This Service returns size fo an uploaded file. <a href="https://github.com/mubaidr/file-metadata-microservice">View Source</a></p>
     </div>
     <div class="container text-center">
-      <form class="form" id="app">
-        <input type="file" />
+      <form class="form" enctype="multipart/form-data" action="/" method="post">
+        <input name="file" type="file">
         <button>Upload</button>
       </form>
-      <hr/>
+      <hr>
       <h2>About</h2>
       <h3>What is this? </h3>
       <p>Upload a file and this page will display file information.</p>
       <h3>How does it work?</h3>
       <p>Nodejs, Expressjs and multer</p>
-      <p>Special thanks to:<br/><a href="https://mlab.com">mlab</a> for monogoDB hosting<br/><a href="https://heroku.com">heroku</a>        for nodejs hosting</p>
-      <br/>
+      <p>Special thanks to:<br><a href="https://heroku.com">heroku</a> for nodejs hosting</p>
+      <br>
       <h3 class="brand">Designed and Coded by <a href="https://github.com/mubaidr">mubaidr</a></h3>
     </div>
 
